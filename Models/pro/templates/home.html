@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>document</title>
+    <style>
+    table, th, td {
+      border: 1px solid black;
+      padding: 5px;
+    }
+    table {
+      border-spacing: 15px;
+    }
+    </style>
+</head>
+<body>
+<h2>Students Information</h2>
+
+{% if data %}
+<h3>Show Data</h3>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>E-mail</th>
+        <th>Details</th>
+        <th>Address</th>
+        <th>Contact</th>
+    </tr>
+    {% for d in data %}
+    <tr>
+        <td>{{d.id}}</td>
+        <td>{{d.name}}</td>
+        <td>{{d.email}}</td>
+        <td>{{d.details}}</td>
+        <td>{{d.address}}</td>
+        <td>{{d.contact}}</td>
+        {% endfor %}
+    </tr>
+</table>
+{% else %}
+<h3>No Data</h3>
+{% endif %}
+</body>
+</html>
